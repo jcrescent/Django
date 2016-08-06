@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ninja Gold</title>
+	{% load staticfiles %}
+	<link rel="stylesheet" type="text/css" href="{% static 'ninja_gold.css' %}">
+</head>
+<style type="text/css">
+</style>
+<body>
+	<h3>Your Gold: {{ request.session.gold }}</h3>
+	<div id='content'>
+		<div class="places">
+			<h2>Farm</h2>
+			<p>(earns 10-20 gold)</p>
+			<form action="/process_gold">
+				<input type="submit" name="place" value="Go to the farm">
+			</form>
+		</div>
+		<div class="places">
+			<h2>Cave</h2>
+			<p>(earns 5-10 gold)</p>
+			<form action="/process_gold">
+				<input type="submit" name="place" value="Go to the cave">
+			</form>
+		</div>
+		<div class="places">
+			<h2>House</h2>
+			<p>(earns 2-5 gold)</p>
+			<form action="/process_gold">
+				<input type="submit" name="place" value="Go to the house">
+			</form>
+		</div>
+		<div class="places">
+			<h2>Casino</h2>
+			<p>(earns/takes 0-50 gold)</p>
+			<form action="/process_gold">
+				<input type="submit" name="place" value="Go to the casino">
+			</form>
+		</div>
+	</div>
+	<div id='bottom'>
+		<h3>Activities:</h3>
+		<div id='log'>
+	    	{{ message | safe }}
+	  	</div>
+	</div>
+</body>
+</html>
