@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Delete</title>
+</head>
+<body>
+	<h2>Are you sure you want to delete the following course?</h2>
+	<p>Name:</p>
+	<p>{{ course.name }}</p>
+	<p>Description:</p>
+	<p>{{ course.description }}</p>
+	<form action="/goback">
+		<input type="submit" name="go back" value="No, Go back">
+	</form>
+	<form action="/delete/{{course.id}}">
+			<input type="submit" name="delete" value=" Yes, delete">
+	</form>
+</body>
+</html>
