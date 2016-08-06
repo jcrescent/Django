@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Turtle</title>
+{% load staticfiles %}
+</head>
+<body>
+{% with 'img/'|add:turtle as img %}
+	<img src={% static img %}>
+{%endwith%}	
+</body>
+</html>
